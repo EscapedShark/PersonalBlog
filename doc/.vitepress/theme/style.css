@@ -1,0 +1,194 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ *
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *   It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *   top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *   on top of it.
+ *
+ *   The soft color must be semi transparent alpha channel. This is crucial
+ *   because it allows adding multiple "soft" colors on top of each other
+ *   to create a accent, such as when having inline code block inside
+ *   custom containers.
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attached to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+
+  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-2: var(--vp-c-indigo-2);
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #bd34fe 30%,
+    #41d1ff
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #bd34fe 50%,
+    #47caff 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+
+/**
+ :root {
+  --vp-c-bg-pattern-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath fill='%23718096' fill-opacity='0.15' d='M30 0L45 15L30 30L15 15Z'%3E%3Canimate attributeName='opacity' values='0.15;0.2;0.15' dur='4s' repeatCount='indefinite'/%3E%3C/path%3E%3Cpath fill='%23718096' fill-opacity='0.12' d='M0 0L15 15L0 30M60 0L45 15L60 30M0 30L15 45L0 60M60 30L45 45L60 60M30 30L45 45L30 60L15 45Z'%3E%3Canimate attributeName='opacity' values='0.12;0.17;0.12' dur='6s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E");
+}
+
+.dark {
+  --vp-c-bg-pattern-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath fill='%239C92AC' fill-opacity='0.1' d='M30 5L55 20L55 40L30 55L5 40L5 20Z'%3E%3Canimate attributeName='opacity' values='0.1;0.15;0.1' dur='4s' repeatCount='indefinite'/%3E%3C/path%3E%3Cpath fill='%239C92AC' fill-opacity='0.05' d='M30 0L60 15L60 45L30 60L0 45L0 15Z'%3E%3Canimate attributeName='opacity' values='0.05;0.1;0.05' dur='6s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E");
+}
+
+.VPContent {
+  background-image: var(--vp-c-bg-pattern-light);
+  background-size: 60px 60px;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+.dark .VPContent {
+  background-image: var(--vp-c-bg-pattern-dark);
+}
+**/
+
+
+
+
+
+
+
+
+/**
+ * Colors Base
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --vp-c-bg-pattern-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg fill='%23718096' fill-opacity='0.3'%3E%3Ccircle cx='50' cy='50' r='4'%3E%3Canimate attributeName='cy' values='50;200;20;150;50' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='50;180;30;250;50' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='5s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='150' cy='80' r='20'%3E%3Canimate attributeName='cy' values='80;40;250;60;80' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='150;300;100;280;150' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='250' cy='60' r='8'%3E%3Canimate attributeName='cy' values='60;250;30;180;60' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='250;180;400;220;250' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='320' cy='150' r='15'%3E%3Canimate attributeName='cy' values='150;80;300;120;150' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='320;250;450;280;320' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='6s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='100' cy='250' r='12'%3E%3Canimate attributeName='cy' values='250;180;400;220;250' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='100;250;50;300;100' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='200' cy='300' r='6'%3E%3Canimate attributeName='cy' values='300;250;450;280;300' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='200;150;350;180;200' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='400' cy='200' r='18'%3E%3Canimate attributeName='cy' values='200;100;350;150;200' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='400;300;500;350;400' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='300' cy='400' r='10'%3E%3Canimate attributeName='cy' values='400;300;500;350;400' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='300;200;400;250;300' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='6s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='450' cy='300' r='4'%3E%3Canimate attributeName='cy' values='300;200;400;250;300' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='450;350;550;400;450' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='150' cy='450' r='16'%3E%3Canimate attributeName='cy' values='450;350;550;400;450' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='150;50;250;100;150' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.3;0.5;0.3' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+}
+
+.dark {
+  --vp-c-bg-pattern-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg fill='%239C92AC' fill-opacity='0.15'%3E%3Ccircle cx='50' cy='50' r='4'%3E%3Canimate attributeName='cy' values='50;200;20;150;50' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='50;180;30;250;50' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='5s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='150' cy='80' r='20'%3E%3Canimate attributeName='cy' values='80;40;250;60;80' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='150;300;100;280;150' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='250' cy='60' r='8'%3E%3Canimate attributeName='cy' values='60;250;30;180;60' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='250;180;400;220;250' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='320' cy='150' r='15'%3E%3Canimate attributeName='cy' values='150;80;300;120;150' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='320;250;450;280;320' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='6s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='100' cy='250' r='12'%3E%3Canimate attributeName='cy' values='250;180;400;220;250' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='100;250;50;300;100' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='200' cy='300' r='6'%3E%3Canimate attributeName='cy' values='300;250;450;280;300' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='200;150;350;180;200' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='400' cy='200' r='18'%3E%3Canimate attributeName='cy' values='200;100;350;150;200' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='400;300;500;350;400' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='300' cy='400' r='10'%3E%3Canimate attributeName='cy' values='400;300;500;350;400' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='300;200;400;250;300' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='6s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='450' cy='300' r='4'%3E%3Canimate attributeName='cy' values='300;200;400;250;300' dur='9s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='450;350;550;400;450' dur='11s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='150' cy='450' r='16'%3E%3Canimate attributeName='cy' values='450;350;550;400;450' dur='12s' repeatCount='indefinite'/%3E%3Canimate attributeName='cx' values='150;50;250;100;150' dur='10s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.15;0.3;0.15' dur='7s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+}
+
+/**
+ * Component: Layout 
+ * -------------------------------------------------------------------------- */
+
+.VPContent {
+  background-image: var(--vp-c-bg-pattern-light);
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+.dark .VPContent {
+  background-image: var(--vp-c-bg-pattern-dark);
+}
