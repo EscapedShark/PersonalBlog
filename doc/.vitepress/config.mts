@@ -65,8 +65,8 @@ export default defineConfig({
         {
           text: 'Markdown',
           items: [
-            { text: 'Markdown基础', link: '/Tools_docs/Markdown/markdown-guide.md' }
-
+            { text: 'Markdown基础', link: '/Tools_docs/Markdown/markdown-guide.md' },
+            { text: 'Markdown例子', link: '/Tools_docs/Markdown/markdown-examples.md' }
           ]
         }
       ]
