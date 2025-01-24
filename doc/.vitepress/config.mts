@@ -4,7 +4,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
 
   //outDir: '../dist',
-  srcDir: '../doc',
+  //srcDir: '../doc',
+  srcDir: '.',
 
   title: "EscapedShark's Blog",
   description: "Record what's worth recording.",
@@ -20,10 +21,11 @@ export default defineConfig({
       { text: 'Tools', 
         items: [
           //{ text: 'Git', link: '/item-1' },
-          { text: 'Markdown', link: '/Tools_docs/Markdown/markdown-guide.md' }
+          { text: 'Markdown', link: '/Tools_docs/Markdown/markdown-guide.md' },
           //{ text: 'Vim', link: '/item-3' },
           //{ text: 'Docker', link: '/item-4' },
-          //{ text: 'Latex', link: '/item-5' }
+          //{ text: 'Latex', link: '/item-5' },
+          { text: '其他', link: '/Tools_docs/其他/linux_exit-node.md' }
         ]
        },
 
@@ -33,7 +35,8 @@ export default defineConfig({
           { text: 'Web开发', link: '/Coding_docs/Web开发/vitepress-tailscale-overview.md' },
           //{ text: '量化学习', link: '/Coding_docs/' },
           //{ text: '机器学习', link: '/Coding_docs/' },
-          { text: '算法学习', link: '/Coding_docs/算法学习/哈希.md' }
+          { text: '算法学习', link: '/Coding_docs/算法学习/哈希.md' },
+          {text: '数据库', link: '/Coding_docs/数据库/postgresql-syntax.md'}
           //{ text: 'Linux知识', link: '/Coding_docs/' },
           //{ text: '网络知识', link: '/Coding_docs/' }
         ]
