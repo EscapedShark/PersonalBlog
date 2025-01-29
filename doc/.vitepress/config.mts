@@ -21,11 +21,11 @@ export default defineConfig({
       { text: 'Tools', 
         items: [
           //{ text: 'Git', link: '/item-1' },
-          { text: 'Markdown', link: '/Tools_docs/Markdown/markdown-guide.md' },
+          { text: '编辑工具', link: '/Tools_docs/编辑工具/vim.md' },
           //{ text: 'Vim', link: '/item-3' },
           //{ text: 'Docker', link: '/item-4' },
           //{ text: 'Latex', link: '/item-5' },
-          { text: '其他', link: '/Tools_docs/其他/linux_exit-node.md' }
+          { text: '家庭服务器', link: '/Tools_docs/家庭服务器/linux_exit-node.md' }
         ]
        },
 
@@ -35,8 +35,8 @@ export default defineConfig({
           { text: 'Web开发', link: '/Coding_docs/Web开发/vitepress-tailscale-overview.md' },
           //{ text: '量化学习', link: '/Coding_docs/' },
           //{ text: '机器学习', link: '/Coding_docs/' },
-          { text: '算法学习', link: '/Coding_docs/算法学习/哈希.md' },
-          {text: '数据库', link: '/Coding_docs/数据库/postgresql-syntax.md'}
+          { text: '算法学习', link: '/Coding_docs/算法学习/hash/2215.md' },
+          { text: '数据库', link: '/Coding_docs/数据库/postgresql-syntax.md' }
           //{ text: 'Linux知识', link: '/Coding_docs/' },
           //{ text: '网络知识', link: '/Coding_docs/' }
         ]
@@ -57,22 +57,58 @@ export default defineConfig({
       '/Coding_docs/算法学习/': [
         {
           text: '算法学习',
+
           items: [
-            { text: '哈希', link: '/Coding_docs/算法学习/哈希.md' }
+            {
+              text: '哈希',
+              items: [ 
+                { text: '2215', link: '/Coding_docs/算法学习/Hash/2215.md' }
+              ],
+            },
+
+            {  
+              text: '前缀和',
+              items: [ 
+                { text: '1732', link: '/Coding_docs/算法学习/PrefixSum/1732.md' }
+              ]
+            },
+
+            {
+              text: '滑动窗口',
+              items: [ 
+                { text: '643', link: '/Coding_docs/算法学习/SlidingWindow/643.md' }
+              ]
+            }
+
+            
 
           ]
         }
       ],
 
-      '/Tools_docs/Markdown/': [
+      '/Tools_docs/编辑工具/': [
         {
-          text: 'Markdown',
+          text: '编辑工具',
           items: [
-            { text: 'Markdown基础', link: '/Tools_docs/Markdown/markdown-guide.md' },
-            { text: 'Markdown例子', link: '/Tools_docs/Markdown/markdown-examples.md' }
+            { text: 'Vim小指南', link: '/Tools_docs/编辑工具/vim.md' },
+            { text: 'Markdown基础', link: '/Tools_docs/编辑工具/markdown-guide.md' },
+            { text: 'Markdown例子', link: '/Tools_docs/编辑工具/markdown-examples.md' }
           ]
         }
-      ]
+      ],
+
+      '/Tools_docs/家庭服务器/': [
+        {
+          text: '家庭服务器',
+          items: [
+            { text: ' Tailscale配置出口节点', link: '/Tools_docs/家庭服务器/linux_exit-node.md' },
+            { text: ' 家庭服务器的NextCloud设置', link: '/Tools_docs/家庭服务器/nextcloud-guide.md' }
+
+          ]
+        }
+      ],
+
+
   },
 
   

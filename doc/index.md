@@ -8,14 +8,14 @@ hero:
   tagline: 👋Welcome to my blog where I will have some of my tips and knowledge. I hope it can be useful for you. 📚 ✨ 💡 🚀 💻 
   actions:
     - theme: brand
-      text: Markdown知识
-      link: /Tools_docs/Markdown/markdown-guide.md
+      text: 编辑工具
+      link: /Tools_docs/编辑工具/vim.md
     - theme: alt
-      text: Web开发
+      text: 家庭服务器
       link: /Coding_docs/Web开发/vitepress-tailscale-overview.md
     - theme: alt
       text: 算法学习
-      link: /Coding_docs/算法学习/哈希.md
+      link: /Coding_docs/算法学习/Hash/2215.md
 
 #features:
 #  - title: Feature A
